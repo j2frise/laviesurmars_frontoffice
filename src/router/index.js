@@ -1,7 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Team from '../views/Team.vue'
+import Subjects from '../views/Subjects.vue'
+import Articles from '../views/Articles.vue'
+import Menu from '../views/Menu.vue'
+import NotFound from '../404.vue'
+
+
+
+
 
 Vue.use(VueRouter)
 
@@ -10,14 +17,35 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Introduction',
+    component: Home,
+    meta: {description: 'Page introduction'}
   },
   {
-    path: '/team',
-    name: 'Team',
-    component: Team
-  }
+    path: '/menu',
+    name: 'Menu',
+    component: Menu,
+    meta: {description: 'Menu du site'}
+  },
+  {
+    path: '/chapitre',
+    component: Subjects,
+    props: true,
+    children: [ 
+      {
+        path: 'article',
+        alias: '',
+        component: Articles,
+        name: 'Subjects',
+        meta: {description: 'Page d\'article'}
+      }
+    ]
+  },
+  {
+    path: '*',
+    component: NotFound,
+    meta: {description: 'Page 404'}
+  } 
 ]
 
 const router = new VueRouter({
