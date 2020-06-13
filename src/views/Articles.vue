@@ -23,7 +23,7 @@ export default {
   components: {
     Carousel
   },
-  data(router) {
+  data() {
     return {
       index: 0,
       slide: []
