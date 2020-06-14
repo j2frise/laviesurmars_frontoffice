@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'nebula-regular';
+    src: url("../fonts/Nebula-Regular.woff") format('woff');
+   }
+
+   @font-face {
+    font-family: 'nebula-hollow';
+    src: url("../fonts/Nebula-Hollow.woff") format('woff');
+   }
+
+   @font-face {
+    font-family: 'faune-text-regular';
+    src: url("../fonts/Faune-Text_Regular.woff") format('woff');
+    src: url("../fonts/Faune-Text_Regular.woff2") format('woff2');
+   }    
+
+   @font-face {
+    font-family: 'faune-display-black';
+    src: url("../fonts/Faune-Display_Black.woff") format('woff');
+    src: url("../fonts/Faune-Display_Black.woff2") format('woff2');
+   }
+
+   @font-face {
+    font-family: 'faune-display-bold-italic';
+    src: url("../fonts/Faune-Display_Bold_Italic.woff") format('woff');
+    src: url("../fonts/faune-Display-Bold-Italic.woff2") format('woff2');
+   }
+
+   @font-face {
+    font-family: 'faune-display-thin';
+    src: url("../fonts/Faune-Display_Thin.woff") format('woff');
+    src: url("../fonts/Faune-Display_Thin.woff2") format('woff2');
+   }
+
+   @font-face {
+    font-family: 'faune-text-bold';
+    src: url("../fonts/Faune-Text_Bold.woff") format('woff');
+    src: url("../fonts/Faune-Text_Bold.woff2") format('woff2');
+   }
+
+   @font-face {
+    font-family: 'faune-text-italic';
+    src: url("../fonts/Faune-Text_Italic.woff") format('woff');
+    src: url("../fonts/Faune-Text_Italic.woff2") format('woff2');
+   }
+
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+  
+  
+  
+ 
+ /* 
+h3 {
+    font-family: 'faune-display-thin';
+
+}
+   h1 {
+    font-family: 'nebula-regular';
+    text-transform: uppercase;
+   }
+
+   h2 {
+    font-family: 'nebula-hollow';
+    text-transform: uppercase;
+    font-weight: normal;
+   }
+   */
