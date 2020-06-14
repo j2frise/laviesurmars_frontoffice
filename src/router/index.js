@@ -1,16 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Subjects from '../views/Subjects.vue'
 import Articles from '../views/Articles.vue'
 import Menu from '../views/Menu.vue'
-import NotFound from '../404.vue'
+import NotFound from '../views/404.vue'
 
-
-
-
-
-Vue.use(VueRouter)
 
 // C'est dans la constante routes que vous définisez les différentes routes de votre projet
 // Chaque route doivent avoir au minimum un path et un component associé
@@ -48,10 +41,4 @@ const routes = [
   } 
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-export default router
+export default routes
