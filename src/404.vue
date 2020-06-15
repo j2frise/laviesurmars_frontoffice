@@ -1,25 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="assets/logo.png">
-    <HelloWorld msg="Error"/>
+    <img alt="Vue logo" src="assets/logo.png" />
+    <HelloWorld msg="Error" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: 'NotFound',
+  name: "NotFound",
   components: {
     HelloWorld
   }
-}
+};
 </script>
 
 <style lang="scss">
-div {
-    background-color: orange;
-}
-
 </style>
