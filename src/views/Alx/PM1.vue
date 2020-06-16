@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "pm1",
+  name: "PM1",
   data() {
     return {
       img_mars: require("../Alx/Img/imageMars/3_Premiers-martien/1-/Mars-earth.png"),
@@ -19,7 +19,6 @@ export default {
 </script>
 <style lang='scss'>
 * {
-  font-family: "Faune";
   margin: 0;
   padding: 0;
 }
@@ -40,10 +39,11 @@ export default {
   }
   &__text {
     // __________ TIPOGRAPHIE ___________
+    font-family: "Faune";
     font-style: normal;
     font-weight: 900;
-    font-size: 34px;
-    line-height: 45px;
+    font-size: 16px;
+    // line-height: 45px;
     color: white;
     font-size: 50px;
     // __________ POSITION ___________
