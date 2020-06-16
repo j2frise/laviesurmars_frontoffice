@@ -6,7 +6,7 @@
     </div>
     <div class="city_dome__title">
         <div class="city_dome__title--h2">
-              <h2> "Sur Mars, vous pouvez commencer une civilisation auto-suffisante et la transformer en quelque chose de vraiment gros"</h2>
+              <h2> </h2>
         </div>
     </div>
     <div class="img-eM">
@@ -17,28 +17,38 @@
 
 <script>
 import 'reset-css';
-/*import { gsap } from "gsap";*/
+import { gsap } from "gsap";
 
 export default {
   name: 'CityDome1',
   data() {
     return { 
         imgBg:require('../../assets/img/Villes-martiennes.png'),
-        imgeM:require('../../assets/img/Elon-musk.png')
+        imgeM:require('../../assets/img/Elon-musk.png'),
+        words: '"Sur Mars, vous pouvez commencer une civilisation auto-suffisante et la transformer en quelque chose de vraiment gros"'
     }
   },
-   /*mounted() {
-      this.animate("#anim")
-   }*/
+   mounted() {
+      this.startAnimate()
+   },
     methods: {
-    /*startAnimation: function() {
-        gsap.to("#anim", {x: "500", duration: 3})
-        gsap.to("#anim", {x: "0", duration: 5, delay: 4})  
-        }
-        animate: function(textWrinting) {
-        var textSplit = gsap.SplitText.create(textWrinting, { type: "chars,words" });
-        return gsap.from(textSplit.chars, { duration:0.1, visibility:"hidden", stagger: 0.1 } );
-        }*/
+    startAnimate: function() {
+         var textH2 = document.querySelector("h2");
+         var textSplit = this.splitText(this.words, textH2);
+         return gsap.from(textSplit, { duration:0.8, visibility:"hidden", stagger: 0.08} );
+      },
+      splitText(word, parent) {
+        const letters = word.split('')
+        const spanArr = [];
+        letters.forEach(letter => {
+        const spanEl = document.createElement('span');
+        parent.appendChild(spanEl);
+        spanEl.innerHTML = letter;
+        spanArr.push(spanEl);
+      })
+      return spanArr;
+    }
+       
     }
 }
 </script>
