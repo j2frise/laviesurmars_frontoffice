@@ -13,7 +13,7 @@ Laviesurmars c'est une WebDoc qui retrace l'histoire de Mars, la planète rouge 
 </div>  
 
 Vous pouvez le visiter en cliquant [**ICI**](https://laviesurmars.netlify.app/) ou directement grace au lien : https://laviesurmars.netlify.app/  
-
+<hr />
 Ce WebDoc est un projet de fin d'année à [**HETIC**](https://www.hetic.net/)  
 
 ## Rendu
