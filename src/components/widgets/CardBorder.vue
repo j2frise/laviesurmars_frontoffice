@@ -1,19 +1,32 @@
 <template>
-    <section class="container__stats">
+    <div :class="'container__stats container__stats--'+myclass">
         <article class="border__stats"></article>
-        <h3 class="text text__bold">6 792 dssdsddssdqssqsdd dsqssdqskm</h3>
-        <h4 class="text text__mutted">Distance de la Terre</h4>
-    </section>
+        <h3 class="text text__bold">{{ title }}</h3>
+        <h4 class="text text__mutted">{{ text}}</h4>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "CardBorder"
+  name: "CardBorder",
+  props: ["title", "text", "myclass"]
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+
+@mixin desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+}
 
 .container__stats {
   position: relative;
@@ -23,7 +36,8 @@ export default {
   flex-wrap: wrap;
   border-radius: 10px;
   justify-content: center;
-  min-height: 80px;
+  min-height: 60px;
+  margin: 25px 20px;
   height: auto;
   
   .border__stats {
@@ -40,14 +54,15 @@ export default {
               rgba(156,63,45,1) 100%);
   }
   
-  &:nth-child(even) {
-    text-align: right;
-    
-    .border__stats {
-      left: unset;
-      right: 0;
+  &--right {
+    @include tablet{
+      text-align: right;
+      
+      .border__stats {
+        left: unset;
+        right: 0;
+      }
     }
-    
   }
   
     

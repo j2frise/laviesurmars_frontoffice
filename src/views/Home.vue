@@ -7,7 +7,7 @@
     </section>
     
     <section class="content">
-      <a href="" >
+      <a href="" @click.prevent='introduction' v-if="mars">
         <svg data-aos="fade-down" data-aos-duration="3000" width="38" height="60" viewBox="0 0 38 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path class="first" d="M18.9598 34.8333H18.9993C25.1094 34.8333 30.0827 29.8617 30.0827 23.75V14.25C30.0827 8.16842 25.1316 3.20784 19.0294 3.16667H18.9344C12.8544 3.20151 7.91602 8.16526 7.91602 14.25V23.75C7.91602 29.8617 12.8703 34.8333 18.9598 34.8333ZM11.0827 14.25C11.0856 12.1554 11.9173 10.147 13.3962 8.66367C14.8751 7.18032 16.881 6.34254 18.9756 6.33334C23.3535 6.34284 26.916 9.89426 26.916 14.25V23.75C26.916 28.1153 23.3646 31.6667 18.9993 31.6667H18.9598C14.5438 31.6667 11.0827 28.1897 11.0827 23.75V14.25Z"/>
           <path class="first" d="M17.416 11.0833C17.416 10.2089 18.1249 9.5 18.9993 9.5C19.8738 9.5 20.5827 10.2089 20.5827 11.0833V17.4167C20.5827 18.2911 19.8738 19 18.9993 19C18.1249 19 17.416 18.2911 17.416 17.4167V11.0833Z"/>
@@ -15,8 +15,10 @@
           <path class="second" d="M11 50L19 58L27 50" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-      <h1 data-aos="fade-right" data-aos-duration="3000">Mars</h1>
-      <div class="circTxt" id="test"></div>
+      <h1 data-aos="fade-right" data-aos-duration="3000" v-if="mars">Mars</h1>
+      <transition name="fade">
+        <div class="circTxt" id="test" v-if="mars"></div>
+      </transition>
       <img id="mars_planet" data-aos="fade-up" data-aos-duration="2500" alt="Vue logo" :src="img">
     </section>
     <Siderbar>
@@ -45,8 +47,6 @@
 
 <script>
 // @ is an alias to /src
-//import Header from '@/components/partials/Header.vue'
-//import Footer from '@/components/partials/Footer.vue'
 import Siderbar from '@/components/widgets/Siderbar.vue'
 import MenuList from '@/components/widgets/MenuList.vue'
 
@@ -56,8 +56,6 @@ import 'aos/dist/aos.css';
 export default {
   name: 'Home',
   components: {
-   // Header,
-   // Footer,
     Siderbar,
     MenuList
   },
@@ -65,13 +63,14 @@ export default {
     return {
       list: [
         {
-          link: '/s',
+          link: '/menu',
           item: 'Découvrir',
           icon: 'ri-checkbox-multiple-blank-line'
         }
       ],
       direction: 'vertical',
-      img: require('../assets/img/mars_planet.png')
+      img: require('../assets/img/mars_planet.png'),
+      mars: true
     }
   },
   methods: {
@@ -80,7 +79,7 @@ export default {
         document.querySelector("#mars_planet").classList.add('rotate')
       },2800);
     },
-    circularText (txt, radius) {
+    circularText (txt) {
       txt = txt.split("")
       var classIndex = document.querySelector(".circTxt")
 
@@ -92,9 +91,32 @@ export default {
         classIndex.innerHTML += ea
         origin += deg
       })
-      console.log(radius)
+    },
+    scrollDetect(e){
+      if(e.wheelDeltaY === -1){
+        this.introduction()
+      }
+    },
+    eventPress(e) {
+      if (e.code === "ArrowDown") {
+        this.introduction()
+      }
+    },
+    introduction(){
+      this.mars = false
+      document.querySelector("#mars_planet").classList.add('transform')
+      setTimeout(() => {
+        this.$router.push('/caracteristiques')
+      }, 2600);
     }
-
+  },
+  created () {
+    window.addEventListener("keydown", this.eventPress);
+    document.addEventListener('mousewheel', this.scrollDetect);
+  },
+  destroyed () {
+    window.removeEventListener("keydown", this.eventPress);
+    document.removeEventListener('mousewheel', this.scrollDetect);
   },
   mounted(){
     AOS.init({
@@ -124,55 +146,6 @@ export default {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-}
-
-.aliens {
-  position: absolute;
-  width: 85%;
-  bottom: 0;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  line-height: 30px;
-   @include tablet(){
-    line-height: 25px;
-  }
-
-  i {
-    font-size: 28px;
-    padding-bottom: 3px;
-    @include tablet(){
-      font-size: 22px;
-      padding: 0;
-    }
-  }
-}
-
-.title {
-  /* Abs positioning makes it not take up vert space */
-  position: absolute;
-  bottom: 190px;
-  left: 25%;
-  background: none;
-  transform-origin: 0 0;
-  transform: rotate(-90deg);
-  padding: 5px 10px;
-  margin: 0 0 10px 0;
-  line-height: 24px;
-  border-left: 1px solid #ffffff ;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 250px;
-  @include tablet(){
-    bottom: 140px;
-  }
-
-  h1 {
-    font-size: 35px;
-  }
 }
 
 .top {
@@ -210,6 +183,13 @@ export default {
            -webkit-animation: rotation 50s infinite linear;
             animation: rotation 50s infinite linear;
         }
+    }
+
+    &.transform{
+      animation: animate-img 3s;
+      @include tablet(){  
+       animation: animate-img-tablet 3s;
+      }
     }
   }
 
@@ -297,6 +277,36 @@ export default {
         -webkit-transform: rotate(359deg);
         transform: rotate(359deg);
 		}
+}
+
+@keyframes animate-img {
+  0% {
+    
+  }
+  /* Adding a step in the middle */
+  50% {
+    
+  }
+  100% {
+    width: 70%;
+    bottom: 40%;
+    right: 13%;
+  }
+}
+
+@keyframes animate-img-tablet {
+  0% {
+    
+  }
+  /* Adding a step in the middle */
+  50% {
+    
+  }
+  100% {   
+    width: 20%;
+    bottom: 35%;
+    right: 40%; 
+  }
 }
 </style>
 

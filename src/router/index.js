@@ -1,8 +1,10 @@
 import Home from '../views/Home.vue'
 import Subjects from '../views/Subjects.vue'
 import Articles from '../views/Articles.vue'
+import SubMenu from '../views/SubMenu.vue'
 import Menu from '../views/Menu.vue'
 import NotFound from '../views/404.vue'
+import Features from '../views/Features.vue'
 
 
 // C'est dans la constante routes que vous définisez les différentes routes de votre projet
@@ -13,12 +15,24 @@ const routes = [
     name: 'Introduction',
     component: Home,
     meta: {description: 'Page introduction'}
+  }, {
+    path: '/caracteristiques',
+    name: 'Caracteristiques',
+    component: Features,
+    meta: {description: 'Page caractéristique'}
   },
   {
     path: '/menu',
-    name: 'Menu',
     component: Menu,
-    meta: {description: 'Menu du site'}
+    props: true,
+    children: [ 
+      {
+        path: 'sub',
+        alias: '',
+        component: SubMenu,
+        name: 'Menu'
+      }
+    ]
   },
   {
     path: '/chapitre',

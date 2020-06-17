@@ -1,7 +1,5 @@
 <template>
   <div class="hello" v-show="visible">
-    article {{ index }}
-    Visible ? {{ visible }}
     <slot></slot>
   </div>
 </template>

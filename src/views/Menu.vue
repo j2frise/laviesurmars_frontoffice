@@ -1,27 +1,59 @@
 <template>
   <div class="menu">
-    <Header></Header>
-
-    <h1> Menu </h1>
-
-    <router-link v-for="i in 3" :key="i" :to='{name: "Subjects", params: {val: i}}'>Chapitre {{ i }} <br></router-link>
-   
-    <Footer></Footer>
+    <section>
+        <router-view></router-view>
+    </section>
+    <Siderbar>
+      <div>
+        <menu-list :direction="direction" :list="list" data-aos="zoom-in" data-aos-duration="2000"></menu-list>
+      </div>
+    </Siderbar>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Header from '@/components/partials/Header.vue'
-import Footer from '@/components/partials/Footer.vue'
+import Siderbar from '@/components/widgets/Siderbar.vue'
+import MenuList from '@/components/widgets/MenuList.vue'
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default {
   name: 'Menu',
   components: {
-    Header,
-    Footer
+    Siderbar,
+    MenuList
+  },
+  data( ) {
+    return {
+      list: [
+        {
+          link: '/',
+          item: 'Accueil',
+          icon: 'ri-home-8-line'
+        }
+      ],
+      direction: 'vertical',
+      img: require('../assets/img/mars_planet.png'),
+      mars: true
+    }
+  },
+  mounted(){
+    AOS.init({
+      startEvent: 'load'
+    })
   }
 }
 </script>
 
+<style lang="scss" scoped>
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    section {
+      width: 92%;
+    }
+  }
+</style>
 

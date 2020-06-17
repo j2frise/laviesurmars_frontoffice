@@ -21,5 +21,5 @@ export default {
   props: {
     val: Number
   }
-};
+}
 </script>
