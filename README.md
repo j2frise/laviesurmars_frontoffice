@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/Status-developing-brightgreen) ![PHP](https://img.shields.io/badge/php-v7.4.6%20-blue) [![HETIC](https://img.shields.io/badge/HETIC-ecole-brightgreen)](https://www.hetic.net/)
+![Status](https://img.shields.io/badge/Status-developing-brightgreen) [![HETIC](https://img.shields.io/badge/HETIC-ecole-brightgreen)](https://www.hetic.net/) ![HTML](https://img.shields.io/badge/HTML-5-e34f26) ![CSS](https://img.shields.io/badge/CSS-3-blue) ![JS](https://img.shields.io/badge/JS-1.8-f7df1e) ![VueJS](https://img.shields.io/badge/vue.js-v2.6.11-42b883) ![Yarn](https://img.shields.io/badge/yarn-v1.22.4-blue)
 
 </div>
 
@@ -12,7 +12,7 @@ Laviesurmars c'est une WebDoc qui retrace l'histoire de Mars, la planète rouge 
 
 </div>  
 
-Vous pouvez le visiter en cliquant [**ICI**](https://laviesurmars.netlify.app/) ou directement grace au lien : https://laviesurmars.netlify.app/  
+Vous pouvez le visiter en cliquant [**ICI**](https://laviesurmars.netlify.app/) ou directement grâce au lien : https://laviesurmars.netlify.app/  
 
 Ce WebDoc est un projet de fin d'année à [**HETIC**](https://www.hetic.net/)  
 
