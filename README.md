@@ -7,7 +7,7 @@
 </div>
 
 Voici la partie Front de notre WebDoc "laviesurmars"
-Vous pouvez le visiter en cliquant [ICI](https://laviesurmars.netlify.app/) ou directement grace au lien : https://laviesurmars.netlify.app/
+Vous pouvez le visiter en cliquant [**ICI**](https://laviesurmars.netlify.app/) ou directement grace au lien : https://laviesurmars.netlify.app/
 
 ## Rendu
 ### [Figma](https://www.figma.com/file/tZ9v59Q5fr4JByM35IaqYu/Groupe-7-%F0%9F%8C%8C-Nouveau?node-id=111%3A3000)
