@@ -6,8 +6,15 @@
 
 </div>
 
-Voici la partie Front de notre WebDoc "laviesurmars"
+<div align="center">
+  
+Laviesurmars c'est une WebDoc qui retrace l'histoire de Mars, la planète rouge qui a soulevé plein de mystère, dont la possibilité d'y habité dans un futur proche ?!
+
+</div>
+
 Vous pouvez le visiter en cliquant [**ICI**](https://laviesurmars.netlify.app/) ou directement grace au lien : https://laviesurmars.netlify.app/
+
+Ce WebDoc est un projet de fin d'année à [**HETIC**](https://www.hetic.net/) 
 
 ## Rendu
 #### [Figma](https://www.figma.com/file/tZ9v59Q5fr4JByM35IaqYu/Groupe-7-%F0%9F%8C%8C-Nouveau?node-id=111%3A3000)
