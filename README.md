@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/Status-developing-brightgreen) [![HETIC](https://img.shields.io/badge/HETIC-ecole-brightgreen)](https://www.hetic.net/) ![HTML](https://img.shields.io/badge/HTML-5-e34f26) ![CSS](https://img.shields.io/badge/CSS-3-blue) ![JS](https://img.shields.io/badge/JS-1.8-f7df1e) ![VueJS](https://img.shields.io/badge/vue.js-v2.6.11-42b883) ![Yarn](https://img.shields.io/badge/yarn-v1.22.4-blue)
+![Status](https://img.shields.io/badge/Status-developing-brightgreen) [![HETIC](https://img.shields.io/badge/%C3%A9cole-HETIC-01cd74)](https://www.hetic.net/) ![HTML](https://img.shields.io/badge/HTML-5-e34f26) ![CSS](https://img.shields.io/badge/CSS-3-blue) ![JS](https://img.shields.io/badge/JS-1.8-f7df1e) ![VueJS](https://img.shields.io/badge/vue.js-v2.6.11-42b883) ![Yarn](https://img.shields.io/badge/yarn-v1.22.4-blue)
 
 </div>
 
