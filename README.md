@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/Status-developing-brightgreen) ![PHP](https://img.shields.io/badge/php-v7.4.6%20-blue)
+![Status](https://img.shields.io/badge/Status-developing-brightgreen) ![PHP](https://img.shields.io/badge/php-v7.4.6%20-blue) [![HETIC](https://github.com/HospitalRun/frontend/workflows/GitHub%20CI/badge.svg)](https://img.shields.io/badge/HETIC-ecole-brightgreen)
 
 </div>
 
