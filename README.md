@@ -14,5 +14,5 @@ Voici la parti Front de notre WebDoc "LaVieSurMars"
 | [<img src="https://avatars3.githubusercontent.com/u/56915614?s=460&v=4" width="100px;"/>
 <br /><sub><b>Quentin HUBER</b></sub>](https://github.com/QuentinHuber) 
 | [<img src="https://avatars3.githubusercontent.com/u/38137871?s=460&u=58821fac78daa458a613b3429c547ef81c4f08d9&v=4" width="100px;"/>
-<br /><sub><b>Alex PAINNOT</b></sub>](https://github.com/Alx-dev7580)
+<br /><sub><b>Alex PAINNOT</b></sub>](https://github.com/Alx-dev7580) |
 |---|---|---|---|
