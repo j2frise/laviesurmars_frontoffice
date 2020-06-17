@@ -1,9 +1,10 @@
 # laviesurmars Frontoffice
+<div align="center">
 ![Status](https://img.shields.io/badge/Status-developing-brightgreen) ![PHP](https://img.shields.io/badge/php-v7.4.6%20-blue)
+</div>
 
----
 Voici la parti Front de notre WebDoc "laviesurmars"
----
+
 ## Rendu
 ### [Figma](https://www.figma.com/file/tZ9v59Q5fr4JByM35IaqYu/Groupe-7-%F0%9F%8C%8C-Nouveau?node-id=111%3A3000)
 ---
