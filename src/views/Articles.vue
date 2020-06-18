@@ -1,13 +1,7 @@
 <template>
   <div class="article">
-    <Carousel>
-      <div class="article-1">Dans la montagne de la mer de l'eau qui pleure</div>
-    </Carousel>
-    <Carousel>
-      <div class="article-2">Le soleil s'enflamme et danse comme un dindon</div>
-    </Carousel>
-    <Carousel>
-      <div class="article-3">L'espace innexploré</div>
+    <Carousel v-for="(element, index) in $parent.articles" :key="index">
+      <div class="article-1">{{element.art_sTitre}}</div>
     </Carousel>
 
     <button @click.prevent="prev">Précédent</button>
@@ -20,41 +14,35 @@
 import Carousel from "@/components/Carousel.vue";
 export default {
   name: "Articles",
+  props: ["list"],
   components: {
     Carousel
   },
   data() {
     return {
       index: 0,
-      slide: []
+      slide: 0
     };
   },
   methods: {
     next() {
-      this.index++;
-      if (this.index >= this.slideCount) {
+      this.$parent.nextPage++;
+      if (this.$parent.nextPage > this.$parent.nb) {
         this.$router.push("/menu");
+        return
       }
+      this.$router.push("/chapitre/"+ this.$parent.id + "/" + this.$parent.num + '/'+ this.$parent.nextPage);
     },
     prev() {
-      this.index--;
-      if (this.index < 0) {
+      this.$parent.nextPage--;
+      if (this.$parent.nextPage === 0) {
         this.$router.push("/menu");
+        return
       }
-    }
-  },
-  mounted() {
-    this.slide = this.$children;
-    this.slide.forEach((slid, i) => {
-      slid.index = i;
-    });
-  },
-  computed: {
-    slideCount() {
-      return this.slide.length;
+      this.$router.push("/chapitre/"+ this.$parent.id + "/" + this.$parent.num + '/'+ this.$parent.nextPage);
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,49 +1,41 @@
 <template>
   <div class="sub_menu">
-    <transition-group name="list">
-        <Carousel v-for="(item, index) in elements" :key="index">
-            <article>
-               <card :element="item"></card>
-            </article>
-        </Carousel>
-    </transition-group>
+      <!--<Carousel v-for="(item, index) in elements" :key="index">
+          <article>
+              <card :element="item"></card>
+          </article>
+      </Carousel>-->
+      <h1 class="main-title">Est-il possible de vivre sur mars ?</h1>
 
-
-    <div class="containernav">
-        <div class="navigation" @click.prevent="prev">
-            <p class="arrow arrow__back">Mars en folie</p>
-            <svg width="219" height="10" viewBox="0 0 219 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M219 9H1L19.0781 1" stroke="white" stroke-width="2"></path>
-            </svg>
+      <div class="container" data-aos="fade-up" data-aos-duration="3000" v-for="(item, index) in elements" :key="index">
+        <h3 class="title-sub">Chapitre {{ index+1 }}</h3>
+        <div class="content-sub">
+          <router-link :to="'/chapitre/' + item.sub_id + '/' +parseInt(index+1) + '/'+ 1">
+          <a>
+            <div class="content-overlay"></div>
+            <img class="content-image" :src="item.sub_sImage">
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">{{ item.sub_sTitre }}</h3>
+              <p class="content-text">{{ item.sub_sDescriptif }}</p>
+            </div>
+          </a>
+          </router-link>
         </div>
-        
-        <div class="navigation" @click.prevent="next">
-            <p class="arrow arrow__next">Mars en folie</p>
-            <svg width="219" height="10" viewBox="0 0 219 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M-1.52588e-05 9H218L199.922 1" stroke="white" stroke-width="2"></path>
-            </svg>
-        </div>
-    </div>
+      </div>
 
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Carousel from "@/components/Carousel.vue";
-import Card from "@/components/widgets/Card.vue";
+
 import api from '../api';
 
 export default {
   name: "Articles",
-  components: {
-    Carousel,
-    Card
-  },
   data() {
     return {
       index: 0,
-      slide: [],
       elements: {}
     };
   },
@@ -64,84 +56,134 @@ export default {
           console.log(error)
           console.log('Serveur inactif')
         })
-    },
-    next() {
-      this.index++;
-      if (this.index >= this.slideCount) {
-        this.index = 0
-      }
-    },
-    prev() {
-      this.index--;
-      if (this.index < 0) {
-        this.$router.push("/");
-      }
     }
   },
   mounted() {
-    this.slide = this.$children;
-    console.log(this.$children);
-    this.slide.forEach((slid, i) => {
-      slid.index = i;
-    });
     this.getSubjects()
-  },
-  computed: {
-    slideCount() {
-      return this.slide.length;
-    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .sub_menu {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-article {
-   
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 50px;
 }
 
-.arrow {
-  margin-bottom: 0;
-  padding-left: 4px;
-  transition: padding 0.6s ease-out;
-  &:nth-child(1) {
-    padding-right: 4px;
-   &:hover {
-    padding-right: 30px;
-  }
-  }
+.main-title{
+  padding: 1.2em 0 1.2em 20px;
+  font-size: 25px;   
 }
-.containernav {
-  display: flex;
-  justify-content: space-between;
-  margin: 50px 60px 0 60px;
-  width: 75%;
-}
-.navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  cursor: pointer;
-  &:hover{
-    .arrow {
-        padding-left: 30px;
-        &:nth-child(1) {
-            padding-right: 30px;
-        }
-    } 
-  }
 
-  &:nth-child(1) {
-    align-items: flex-end;
-  }
-  
+.container{
+  padding: 1em 0 1em 40px;
+  float: left;
+  width: 100%;
 }
+@media screen and (max-width: 640px){
+  .container{
+    padding: 1em 0;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    width: 33.33333%;
+  }
+}
+
+.container .title-sub{
+  text-align: center;
+  margin-bottom: 10px;
+  color: #D9CBAC;
+}
+
+.content-sub {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content-sub .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content-sub:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+  height: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content-sub:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
+
+.fadeIn-top{
+  top: 20%;
+}
+
+.fadeIn-left{
+  left: 20%;
+}
+
+.fadeIn-right{
+  left: 80%;
+}
+
 </style>

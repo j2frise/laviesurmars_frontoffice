@@ -35,7 +35,7 @@ const routes = [
     ]
   },
   {
-    path: '/chapitre',
+    path: '/chapitre/:id/:num/:page',
     component: Subjects,
     props: true,
     children: [ 

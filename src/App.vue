@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <transition name="slither" v-if="$route.path === '/menu' || $route.path === '/'">
+    <transition name="slither" v-if="$route.path === '/menu'">
       <router-view/>
     </transition>
     <transition v-else>
@@ -41,6 +41,10 @@ $assets: '~@/assets/';
     }
 }
 
+html {
+  cursor: url($assets + 'cursor.png') 4 10, auto;
+}
+
 body {
   background: #080808;
   font-family: 'faune-text-regular', sans-serif;
@@ -67,6 +71,10 @@ a {
 h1 {
   font-family: 'nebula-regular';
   text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: 18px;
 }
 
 h1 {
@@ -164,19 +172,6 @@ h1 {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-}
-
-
-.list-item {
-  display: inline-block;
-  margin-right: 10px;
-}
-.list-enter-active, .list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
 }
 
 /* Les animations d'entrée (« enter ») et de sortie (« leave »)  */
