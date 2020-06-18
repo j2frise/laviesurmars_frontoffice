@@ -41,6 +41,24 @@ $assets: '~@/assets/';
     }
 }
 
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: red #CFD8DC;
+}
+body::-webkit-scrollbar-track {
+  background: #CFD8DC;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: red ;
+  border-radius: 6px;
+  border: 4px solid #CFD8DC;
+}
+
+
 html {
   cursor: url($assets + 'cursor.png') 4 10, auto;
 }

@@ -91,7 +91,7 @@ export default {
 
 @media screen and (min-width: 900px){
   .container{
-    width: 33.33333%;
+    width: 28%;
   }
 }
 
@@ -105,7 +105,7 @@ export default {
   position: relative;
   width: 90%;
   max-width: 400px;
-  height: 200px;
+  height: 160px;
   margin: auto;
   overflow: hidden;
 }
