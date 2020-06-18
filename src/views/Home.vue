@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <audio  controls autoplay>
+    <audio loop controls autoplay v-if='audio'>
         <source :src="son" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
@@ -90,7 +90,7 @@ export default {
       direction: 'vertical',
       mars: true,
       myvideo: require("../assets/video/curiosity.mp4"),
-      son: require("../assets/audio/space.mp3"),
+      son: require("../assets/audio/home.mp3"),
       audio: false,
       intro: true,
       home: false,
@@ -101,6 +101,7 @@ export default {
   },
   methods: {
     passed (){
+      this.audio = !this.audio
       this.intro = !this.intro
       this.home = !this.home
       this.rotate()
