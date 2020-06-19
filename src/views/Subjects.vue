@@ -3,7 +3,7 @@
     <Header> 
       <h1>Chapitre {{ num }} : {{ myData.sub_sTitre }}</h1>
     </Header>
-    <router-view></router-view>
+    <router-view :list="articles[0]"></router-view>
   </div>
 </template>
 

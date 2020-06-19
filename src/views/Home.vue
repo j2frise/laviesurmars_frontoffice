@@ -96,7 +96,7 @@ export default {
       home: false,
       img: require('@/assets/img/mars_planet.png'),
       logo: require('../assets/img/logo_mars_blanc.svg'),
-      words: '"Il Y a deux ans, la Naza faisait savoir que le rover Curiosity, qui roule depuis le mois d\'août 2012 sur les couches sédimentaires à l\'intérieur d\'un cratère martien dénommé Gale, avait détecté des molécules organiques dans des blocs de mubstone. La vie est-elle possible sur Mars ? Parcourez ce webdoc pour en savoir plus"'
+      words: '"Il Y a deux ans, la Nasa faisait savoir que le rover Curiosity, qui roule depuis le mois d\'août 2012 sur les couches sédimentaires à l\'intérieur d\'un cratère martien dénommé Gale, avait détecté des molécules organiques dans des blocs de mubstone. La vie est-elle possible sur Mars ? Parcourez ce webdoc pour en savoir plus"'
     }
   },
   methods: {
@@ -312,7 +312,7 @@ audio {
     margin: 32vh 0 0 32vw;
     color: #D9CBAC;
     @include tablet(){
-      margin: 32vh 0 0 0;
+      margin: 38vh 0 0 0;
       font-size: 100px;
     }
   }

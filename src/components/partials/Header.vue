@@ -27,12 +27,16 @@ export default {
     }
 }
 #nav {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 98.5%;
   justify-content: space-between;
-  background: rgba(#000000, 0.3);
+  background: rgba(#000000, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   @include tablet {
     flex-direction: row;
   }

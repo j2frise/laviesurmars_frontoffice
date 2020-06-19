@@ -1,14 +1,16 @@
 <template>
   <div class="containervideo">
     <video class="containervideo__vid" :src="myvideo" controls autoplay controlsList="nodownload" />
-    <slot></slot>
+    <div :class="bottom"> 
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "Video",
-  props:["myvideo"],
+  props:["myvideo","bottom"],
   data() {
     return {
       playVideo: require("../assets/video-icon.svg"),
@@ -32,6 +34,15 @@ export default {
   height: 100vh;
   overflow: hidden;
   background: black;
+
+  .bottom {
+    position: fixed;
+    left: 0;
+    bottom: 100px; 
+    width: 95%;
+    display: flex;
+    justify-content: flex-end ;
+  }
 
   &__vid {
     width: 92%;
