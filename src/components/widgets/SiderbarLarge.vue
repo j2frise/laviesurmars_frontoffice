@@ -1,6 +1,8 @@
 <template>
     <div class="sidebar__large sidebar__large--left">
-        <p class="text">testesteskshdjihiygdwyggchbsbddbhgggg dyggygsygcygduycsgdcygsygcygsgd</p>
+        <p class="text">
+          <slot></slot>
+        </p>
     </div>
 </template>
 
